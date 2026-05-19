@@ -8,7 +8,7 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'u736179347_db_cotiza3d');
 define('DB_USER', 'u736179347_db_cotiza3d');
-define('DB_PASS', 'R;GP-4n4');
+define('DB_PASS', 'R_GP-4n4');
 define('DB_CHARSET', 'utf8mb4');
 
 function getDBConnection() {
