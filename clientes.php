@@ -11,6 +11,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Clientes - tienda3d</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        /* Apply dark class early to avoid flash */
+        (function(){
+            try {
+                const key = 'tienda3d-dark-mode';
+                const stored = localStorage.getItem(key);
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                if (stored === 'true' || (!stored && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch(e){}
+        })();
+    </script>
     <link rel="stylesheet" href="assets/css/custom.css">
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="assets/css/cruds.css">
@@ -31,8 +44,8 @@
             <div class="nav-tabs" id="nav-tabs">
                 <button class="nav-tab active" data-tab="pedidos">📋 Pedidos</button>
                 <button class="nav-tab" data-tab="catalogo">📦 Catálogo</button>
-                <a href="clientes.php" class="nav-tab">👥 Clientes</a>
-                <a href="productos.php" class="nav-tab">🏭 Productos</a>
+                <a href="clientes.php" class="nav-tab" data-tab="clientes">👥 Clientes</a>
+                <a href="productos.php" class="nav-tab" data-tab="productos">🏭 Productos</a>
                 <button class="nav-tab" data-tab="configuracion">⚙️ Configuración</button>
             </div>
             <div class="navbar-controls">

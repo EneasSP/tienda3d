@@ -842,6 +842,21 @@ async function guardarParametros() {
 /**
  * Inicializa la aplicación cuando el DOM está listo
  */
+
+/* Set active nav-tab based on current URL */
+function setActiveNavFromLocation() {
+    const path = window.location.pathname.split('/').pop();
+    let tab = 'pedidos';
+    if (path === '' || path === 'index.php') tab = 'pedidos';
+    else if (path.includes('clientes.php') || path.includes('clientes')) tab = 'clientes';
+    else if (path.includes('productos.php') || path.includes('productos')) tab = 'productos';
+    // Toggle active on nav tabs
+    document.querySelectorAll('.nav-tab').forEach(t => {
+        const name = t.dataset.tab || (t.getAttribute('href') || '').split('/').pop().replace('.php','');
+        t.classList.toggle('active', name === tab);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar tema oscuro
     initDarkMode();
