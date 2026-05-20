@@ -1,9 +1,9 @@
 /**
- * PrintCraft Dashboard - JavaScript Principal
+ * tienda3d Dashboard - JavaScript Principal
  * Sistema de Cotización y Gestión de Impresión 3D
  * 
- * @author PrintCraft Development Team
- * @version 1.0.0
+ * @author tienda3d Development Team
+ * @version 2.0.0
  */
 
 /* =================================================================
@@ -12,7 +12,7 @@
 
 const CONFIG = {
     API_BASE: 'api',
-    DARK_MODE_KEY: 'printcraft-dark-mode',
+    DARK_MODE_KEY: 'tienda3d-dark-mode',
     SESSION_TIMEOUT: 86400000 // 24 horas en milisegundos
 };
 
@@ -845,6 +845,25 @@ async function guardarParametros() {
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar tema oscuro
     initDarkMode();
+    
+    // Configurar hamburger menu
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const navTabs = document.getElementById('nav-tabs');
+    
+    if (hamburgerMenu && navTabs) {
+        hamburgerMenu.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('active');
+            navTabs.classList.toggle('active');
+        });
+        
+        // Cerrar menú al hacer clic en un tab
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                hamburgerMenu.classList.remove('active');
+                navTabs.classList.remove('active');
+            });
+        });
+    }
     
     // Configurar toggle de dark mode
     const darkModeToggle = document.getElementById('dark-mode-toggle');

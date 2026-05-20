@@ -1,7 +1,7 @@
 <?php
 /**
  * Archivo de conexión a la base de datos MySQL
- * PrintCraft - Sistema de Cotización y Gestión de Impresión 3D
+ * tienda3d - Sistema de Cotización y Gestión de Impresión 3D
  */
 
 // Configuración de la base de datos para Hostinger

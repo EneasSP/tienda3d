@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PrintCraft - Sistema de Cotización y Gestión de Impresión 3D">
-    <title>PrintCraft - Dashboard de Impresión 3D</title>
+    <meta name="description" content="tienda3d - Sistema de Cotización y Gestión de Impresión 3D">
+    <title>tienda3d - Dashboard de Impresión 3D</title>
     
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,7 +12,7 @@
     <!-- Google Fonts - Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Configuración de Tailwind para Dark Mode -->
     <script>
@@ -25,16 +25,28 @@
                     },
                     colors: {
                         primary: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            200: '#c7d2fe',
-                            300: '#a5b4fc',
-                            400: '#818cf8',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            800: '#3730a3',
-                            900: '#312e81',
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        },
+                        secondary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c3d66',
                         }
                     }
                 }
@@ -44,6 +56,7 @@
     
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 <body class="min-h-screen">
     <!-- Barra de navegación superior -->
@@ -51,12 +64,19 @@
         <div class="navbar-content">
             <!-- Logo -->
             <a href="#" class="logo">
-                <div class="logo-icon">🖨️</div>
-                <span>PrintCraft</span>
+                <div class="logo-icon">🏪</div>
+                <span>tienda3d</span>
             </a>
             
+            <!-- Hamburger Menu (Mobile) -->
+            <button id="hamburger-menu" class="hamburger-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
             <!-- Tabs de navegación -->
-            <div class="nav-tabs">
+            <div class="nav-tabs" id="nav-tabs">
                 <button class="nav-tab active" data-tab="pedidos">📋 Pedidos</button>
                 <button class="nav-tab" data-tab="catalogo">📦 Catálogo</button>
                 <button class="nav-tab" data-tab="configuracion">⚙️ Configuración</button>
