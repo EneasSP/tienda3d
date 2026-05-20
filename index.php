@@ -79,6 +79,8 @@
             <div class="nav-tabs" id="nav-tabs">
                 <button class="nav-tab active" data-tab="pedidos">📋 Pedidos</button>
                 <button class="nav-tab" data-tab="catalogo">📦 Catálogo</button>
+                <a href="clientes.php" class="nav-tab">👥 Clientes</a>
+                <a href="productos.php" class="nav-tab">🏭 Productos</a>
                 <button class="nav-tab" data-tab="configuracion">⚙️ Configuración</button>
             </div>
             
