@@ -29,30 +29,25 @@
     <link rel="stylesheet" href="assets/css/cruds.css">
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
-    <!-- Barra de navegación (copiada de index.php) -->
-    <nav class="navbar">
-        <div class="navbar-content">
-            <a href="index.php" class="logo">
-                <div class="logo-icon">🏪</div>
-                <span>tienda3d</span>
+    <!-- Header simple (sin navbar compleja) -->
+    <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.php" class="flex items-center gap-2 text-xl font-bold bg-gradient-to-r from-purple-600 to-sky-600 bg-clip-text text-transparent">
+                🏪 tienda3d
             </a>
-            <button id="hamburger-menu" class="hamburger-menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <div class="nav-tabs" id="nav-tabs">
-                <button class="nav-tab active" data-tab="pedidos">📋 Pedidos</button>
-                <button class="nav-tab" data-tab="catalogo">📦 Catálogo</button>
-                <a href="clientes.php" class="nav-tab" data-tab="clientes">👥 Clientes</a>
-                <a href="productos.php" class="nav-tab" data-tab="productos">🏭 Productos</a>
-                <button class="nav-tab" data-tab="configuracion">⚙️ Configuración</button>
-            </div>
-            <div class="navbar-controls">
-                <button id="dark-mode-toggle" class="dark-mode-toggle" title="Cambiar modo oscuro"></button>
+            <div class="flex items-center gap-4">
+                <a href="clientes.php" class="px-4 py-2 rounded-lg font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    👥 Clientes
+                </a>
+                <a href="productos.php" class="px-4 py-2 rounded-lg font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    🏭 Productos
+                </a>
+                <button id="dark-mode-toggle-simple" class="px-4 py-2 rounded-lg font-semibold text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition" title="Cambiar modo">
+                    🌙
+                </button>
             </div>
         </div>
-    </nav>
+    </div>
     
     <div class="container mx-auto p-4 md:p-8">
         <div class="mb-8">
@@ -227,7 +222,22 @@
         </div>
     </div>
 
-    <script src="assets/js/app.js"></script>
     <script src="assets/js/productos.js"></script>
+    <script>
+        // Simple dark mode toggle (sin cargar app.js)
+        document.addEventListener('DOMContentLoaded', () => {
+            const key = 'tienda3d-dark-mode';
+            const toggle = document.getElementById('dark-mode-toggle-simple');
+            
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    const html = document.documentElement;
+                    html.classList.toggle('dark');
+                    const isDark = html.classList.contains('dark');
+                    localStorage.setItem(key, isDark.toString());
+                });
+            }
+        });
+    </script>
 </body>
 </html>
