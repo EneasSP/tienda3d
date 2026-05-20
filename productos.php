@@ -16,6 +16,30 @@
     <link rel="stylesheet" href="assets/css/cruds.css">
 </head>
 <body class="bg-gray-50 dark:bg-gray-900">
+    <!-- Barra de navegación (copiada de index.php) -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="index.php" class="logo">
+                <div class="logo-icon">🏪</div>
+                <span>tienda3d</span>
+            </a>
+            <button id="hamburger-menu" class="hamburger-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="nav-tabs" id="nav-tabs">
+                <button class="nav-tab active" data-tab="pedidos">📋 Pedidos</button>
+                <button class="nav-tab" data-tab="catalogo">📦 Catálogo</button>
+                <a href="clientes.php" class="nav-tab">👥 Clientes</a>
+                <a href="productos.php" class="nav-tab">🏭 Productos</a>
+                <button class="nav-tab" data-tab="configuracion">⚙️ Configuración</button>
+            </div>
+            <div class="navbar-controls">
+                <button id="dark-mode-toggle" class="dark-mode-toggle" title="Cambiar modo oscuro"></button>
+            </div>
+        </div>
+    </nav>
     
     <div class="container mx-auto p-4 md:p-8">
         <div class="mb-8">
@@ -190,6 +214,7 @@
         </div>
     </div>
 
-    <script src="../assets/js/productos.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/productos.js"></script>
 </body>
 </html>
